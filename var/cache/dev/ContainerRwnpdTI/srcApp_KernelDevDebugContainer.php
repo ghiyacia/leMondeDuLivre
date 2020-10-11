@@ -1,6 +1,6 @@
 <?php
 
-namespace ContainerYhLjzXN;
+namespace ContainerRwnpdTI;
 
 use Symfony\Component\DependencyInjection\Argument\RewindableGenerator;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -850,8 +850,16 @@ class srcApp_KernelDevDebugContainer extends Container
         $a->setEntityListenerResolver(new \Doctrine\Bundle\DoctrineBundle\Mapping\ContainerEntityListenerResolver($this));
         $a->setRepositoryFactory(new \Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory(new \Symfony\Component\DependencyInjection\Argument\ServiceLocator($this->getService, [
             'App\\Repository\\AuteurRepository' => ['privates', 'App\\Repository\\AuteurRepository', 'getAuteurRepositoryService', false],
+            'App\\Repository\\EditeurRepository' => ['privates', 'App\\Repository\\EditeurRepository', 'getEditeurRepositoryService', false],
+            'App\\Repository\\GenreRepository' => ['privates', 'App\\Repository\\GenreRepository', 'getGenreRepositoryService', false],
+            'App\\Repository\\LivreRepository' => ['privates', 'App\\Repository\\LivreRepository', 'getLivreRepositoryService', false],
+            'App\\Repository\\NationaliteRepository' => ['privates', 'App\\Repository\\NationaliteRepository', 'getNationaliteRepositoryService', false],
         ], [
             'App\\Repository\\AuteurRepository' => '?',
+            'App\\Repository\\EditeurRepository' => '?',
+            'App\\Repository\\GenreRepository' => '?',
+            'App\\Repository\\LivreRepository' => '?',
+            'App\\Repository\\NationaliteRepository' => '?',
         ])));
 
         $this->services['doctrine.orm.default_entity_manager'] = $instance = \Doctrine\ORM\EntityManager::create(($this->services['doctrine.dbal.default_connection'] ?? $this->getDoctrine_Dbal_DefaultConnectionService()), $a);
@@ -1703,6 +1711,74 @@ class srcApp_KernelDevDebugContainer extends Container
         include_once \dirname(__DIR__, 4).'/src/Repository/AuteurRepository.php';
 
         return $this->privates['App\\Repository\\AuteurRepository'] = new \App\Repository\AuteurRepository(($this->services['doctrine'] ?? $this->getDoctrineService()));
+    }
+
+    /**
+     * Gets the private 'App\Repository\EditeurRepository' shared autowired service.
+     *
+     * @return \App\Repository\EditeurRepository
+     */
+    protected function getEditeurRepositoryService()
+    {
+        include_once \dirname(__DIR__, 4).'/vendor/doctrine/persistence/lib/Doctrine/Persistence/ObjectRepository.php';
+        include_once \dirname(__DIR__, 4).'/vendor/doctrine/collections/lib/Doctrine/Common/Collections/Selectable.php';
+        include_once \dirname(__DIR__, 4).'/vendor/doctrine/orm/lib/Doctrine/ORM/EntityRepository.php';
+        include_once \dirname(__DIR__, 4).'/vendor/doctrine/doctrine-bundle/Repository/ServiceEntityRepositoryInterface.php';
+        include_once \dirname(__DIR__, 4).'/vendor/doctrine/doctrine-bundle/Repository/ServiceEntityRepository.php';
+        include_once \dirname(__DIR__, 4).'/src/Repository/EditeurRepository.php';
+
+        return $this->privates['App\\Repository\\EditeurRepository'] = new \App\Repository\EditeurRepository(($this->services['doctrine'] ?? $this->getDoctrineService()));
+    }
+
+    /**
+     * Gets the private 'App\Repository\GenreRepository' shared autowired service.
+     *
+     * @return \App\Repository\GenreRepository
+     */
+    protected function getGenreRepositoryService()
+    {
+        include_once \dirname(__DIR__, 4).'/vendor/doctrine/persistence/lib/Doctrine/Persistence/ObjectRepository.php';
+        include_once \dirname(__DIR__, 4).'/vendor/doctrine/collections/lib/Doctrine/Common/Collections/Selectable.php';
+        include_once \dirname(__DIR__, 4).'/vendor/doctrine/orm/lib/Doctrine/ORM/EntityRepository.php';
+        include_once \dirname(__DIR__, 4).'/vendor/doctrine/doctrine-bundle/Repository/ServiceEntityRepositoryInterface.php';
+        include_once \dirname(__DIR__, 4).'/vendor/doctrine/doctrine-bundle/Repository/ServiceEntityRepository.php';
+        include_once \dirname(__DIR__, 4).'/src/Repository/GenreRepository.php';
+
+        return $this->privates['App\\Repository\\GenreRepository'] = new \App\Repository\GenreRepository(($this->services['doctrine'] ?? $this->getDoctrineService()));
+    }
+
+    /**
+     * Gets the private 'App\Repository\LivreRepository' shared autowired service.
+     *
+     * @return \App\Repository\LivreRepository
+     */
+    protected function getLivreRepositoryService()
+    {
+        include_once \dirname(__DIR__, 4).'/vendor/doctrine/persistence/lib/Doctrine/Persistence/ObjectRepository.php';
+        include_once \dirname(__DIR__, 4).'/vendor/doctrine/collections/lib/Doctrine/Common/Collections/Selectable.php';
+        include_once \dirname(__DIR__, 4).'/vendor/doctrine/orm/lib/Doctrine/ORM/EntityRepository.php';
+        include_once \dirname(__DIR__, 4).'/vendor/doctrine/doctrine-bundle/Repository/ServiceEntityRepositoryInterface.php';
+        include_once \dirname(__DIR__, 4).'/vendor/doctrine/doctrine-bundle/Repository/ServiceEntityRepository.php';
+        include_once \dirname(__DIR__, 4).'/src/Repository/LivreRepository.php';
+
+        return $this->privates['App\\Repository\\LivreRepository'] = new \App\Repository\LivreRepository(($this->services['doctrine'] ?? $this->getDoctrineService()));
+    }
+
+    /**
+     * Gets the private 'App\Repository\NationaliteRepository' shared autowired service.
+     *
+     * @return \App\Repository\NationaliteRepository
+     */
+    protected function getNationaliteRepositoryService()
+    {
+        include_once \dirname(__DIR__, 4).'/vendor/doctrine/persistence/lib/Doctrine/Persistence/ObjectRepository.php';
+        include_once \dirname(__DIR__, 4).'/vendor/doctrine/collections/lib/Doctrine/Common/Collections/Selectable.php';
+        include_once \dirname(__DIR__, 4).'/vendor/doctrine/orm/lib/Doctrine/ORM/EntityRepository.php';
+        include_once \dirname(__DIR__, 4).'/vendor/doctrine/doctrine-bundle/Repository/ServiceEntityRepositoryInterface.php';
+        include_once \dirname(__DIR__, 4).'/vendor/doctrine/doctrine-bundle/Repository/ServiceEntityRepository.php';
+        include_once \dirname(__DIR__, 4).'/src/Repository/NationaliteRepository.php';
+
+        return $this->privates['App\\Repository\\NationaliteRepository'] = new \App\Repository\NationaliteRepository(($this->services['doctrine'] ?? $this->getDoctrineService()));
     }
 
     /**

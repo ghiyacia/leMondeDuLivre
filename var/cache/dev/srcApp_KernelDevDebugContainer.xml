@@ -353,6 +353,18 @@
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
+    <service id="App\Repository\EditeurRepository" class="App\Repository\EditeurRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\GenreRepository" class="App\Repository\GenreRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\LivreRepository" class="App\Repository\LivreRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
     <service id="App\Repository\NationaliteRepository" class="App\Repository\NationaliteRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
@@ -3454,7 +3466,7 @@
       <factory class="Doctrine\ORM\EntityManager" method="create"/>
     </service>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory" public="false">
-      <argument type="service" id=".service_locator.6B.NV1C"/>
+      <argument type="service" id=".service_locator.QtZPGWR"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -4707,6 +4719,12 @@
     <service id=".abstract.instanceof.SensioLabs\Security\Command\SecurityCheckerCommand" class="SensioLabs\Security\Command\SecurityCheckerCommand" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\AuteurRepository" class="App\Repository\AuteurRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\AuteurRepository" class="App\Repository\AuteurRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\EditeurRepository" class="App\Repository\EditeurRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\EditeurRepository" class="App\Repository\EditeurRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\GenreRepository" class="App\Repository\GenreRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\GenreRepository" class="App\Repository\GenreRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\LivreRepository" class="App\Repository\LivreRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\LivreRepository" class="App\Repository\LivreRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\NationaliteRepository" class="App\Repository\NationaliteRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\NationaliteRepository" class="App\Repository\NationaliteRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".service_locator.CmORmuK" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
@@ -5011,10 +5029,13 @@
         <argument key="doctrine.orm.default_listeners.attach_entity_listeners" type="service" id="doctrine.orm.default_listeners.attach_entity_listeners"/>
       </argument>
     </service>
-    <service id=".service_locator.6B.NV1C" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.QtZPGWR" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Repository\AuteurRepository" type="service" id="App\Repository\AuteurRepository"/>
+        <argument key="App\Repository\EditeurRepository" type="service" id="App\Repository\EditeurRepository"/>
+        <argument key="App\Repository\GenreRepository" type="service" id="App\Repository\GenreRepository"/>
+        <argument key="App\Repository\LivreRepository" type="service" id="App\Repository\LivreRepository"/>
         <argument key="App\Repository\NationaliteRepository" type="service" id="App\Repository\NationaliteRepository"/>
       </argument>
     </service>

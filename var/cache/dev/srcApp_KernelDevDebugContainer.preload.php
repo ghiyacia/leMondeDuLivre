@@ -10,7 +10,7 @@ if (in_array(PHP_SAPI, ['cli', 'phpdbg'], true)) {
 }
 
 require dirname(__DIR__, 3).'/vendor/autoload.php';
-require __DIR__.'/ContainerR7fxbck/srcApp_KernelDevDebugContainer.php';
+require __DIR__.'/ContainerRwnpdTI/srcApp_KernelDevDebugContainer.php';
 
 $classes = [];
 $classes[] = 'Symfony\Bundle\FrameworkBundle\FrameworkBundle';
@@ -34,6 +34,9 @@ $classes[] = 'Symfony\Bundle\FrameworkBundle\EventListener\ResolveControllerName
 $classes[] = 'Symfony\Component\HttpFoundation\RequestMatcher';
 $classes[] = 'Symfony\Component\DependencyInjection\ServiceLocator';
 $classes[] = 'App\Repository\AuteurRepository';
+$classes[] = 'App\Repository\EditeurRepository';
+$classes[] = 'App\Repository\GenreRepository';
+$classes[] = 'App\Repository\LivreRepository';
 $classes[] = 'App\Repository\NationaliteRepository';
 $classes[] = 'SensioLabs\Security\Command\SecurityCheckerCommand';
 $classes[] = 'SensioLabs\Security\SecurityChecker';
